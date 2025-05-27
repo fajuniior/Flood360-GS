@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SolucionaEnchentes</title>
+  <link rel="stylesheet" href="./src/css/estilo.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header__inner">
+      <a href="index.html" class="logo">SolucionaEnchentes</a>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pages/sobre.html">Sobre</a></li>
+          <li><a href="pages/quiz.html">Quiz</a></li>
+        </ul>
+        <button class="nav__toggle" aria-label="Abrir menu">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SLIDESHOW -->
+  <section class="slideshow">
+    <!-- placeholder para 3 vídeos/imagens -->
+    <div class="slide active" data-src="./src/assets/video/slide1.mp4"></div>
+    <div class="slide"        data-src="./src/assets/video/slide2.mp4"></div>
+    <div class="slide"        data-src="./src/assets/video/slide3.mp4"></div>
+    <button class="slideshow__prev">❮</button>
+    <button class="slideshow__next">❯</button>
+  </section>
+
+  <!-- APRESENTAÇÃO -->
+  <main class="container">
+    <section id="sobre">
+      <h1>Enchentes no Brasil: Soluções com Tecnologia</h1>
+      <p>As enchentes no Brasil são tragédias anunciadas… <a href="pages/sobre.html">Saiba mais →</a></p>
+    </section>
+
+    <section id="monitoramento">
+      <h2>Monitoramento em Tempo Real</h2>
+      <p>Use IA, satélites e IoT para prever e alertar comunidades…</p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© 2025 SolucionaEnchentes | Desenvolvido pela equipe GS</p>
+    </div>
+  </footer>
+
+  <script src="./src/js/script.js"></script>
+</body>
+</html>
