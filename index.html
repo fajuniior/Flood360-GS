@@ -3,61 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>SolucionaEnchentes</title>
-  <link rel="stylesheet" href="./src/css/estilo.css">
+  <title>Flood360 – Soluções Contra Enchentes</title>
+  <link rel="stylesheet" href="src/css/estilo.css">
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- header -->
   <header>
-    <div class="container header__inner">
-      <a href="index.html" class="logo">SolucionaEnchentes</a>
-      <nav class="nav">
+    <div class="container">
+      <a href="index.html" class="logo">Flood<span>360</span></a>
+      <button class="nav__toggle" aria-label="Abrir menu">☰</button>
+      <nav>
         <ul class="nav__list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="pages/sobre.html">Sobre</a></li>
-          <li><a href="pages/quiz.html">Quiz</a></li>
+          <li><a href="index.html" class="nav__link nav__link--active">Home</a></li>
+          <li><a href="sobre.html" class="nav__link">Sobre</a></li>
+          <li><a href="quiz.html" class="nav__link">Quiz</a></li>
+          <li><a href="contato.html" class="nav__link">Contato</a></li>
         </ul>
-        <button class="nav__toggle" aria-label="Abrir menu">☰</button>
       </nav>
     </div>
   </header>
 
-  <!-- SLIDESHOW -->
+  <!-- slideshow -->
   <section class="slideshow">
-    <div class="slide active">
-      <img src="./src/assets/slide1.jpg" alt="Enchente RS 1">
+    <div class="slide active" style="background-image:url('src/assets/slide1.jpg')"></div>
+    <div class="slide"        style="background-image:url('src/assets/slide2.jpg')"></div>
+    <div class="slide"        style="background-image:url('src/assets/slide3.jpg')"></div>
+    <div class="slideshow__controls">
+      <button class="slideshow__btn slideshow__prev">‹</button>
+      <button class="slideshow__btn slideshow__next">›</button>
     </div>
-    <div class="slide">
-      <img src="./src/assets/slide2.jpg" alt="Enchente RS 2">
-    </div>
-    <div class="slide">
-      <img src="./src/assets/slide3.jpg" alt="Enchente RS 3">
-    </div>
-    <button class="slideshow__prev" aria-label="Anterior">❮</button>
-    <button class="slideshow__next" aria-label="Próximo">❯</button>
   </section>
 
-  <!-- APRESENTAÇÃO -->
-  <main class="container">
-    <section id="sobre">
-      <h1>Enchentes no Brasil: Soluções com Tecnologia</h1>
-      <p>As enchentes no Brasil são tragédias anunciadas… <a href="pages/sobre.html">Saiba mais →</a></p>
-    </section>
+  <!-- chamada principal -->
+  <section class="section">
+    <h2 class="section-title">Enchentes no Brasil: Soluções Tecnológicas</h2>
+    <p>Monitoramento em tempo real, alertas preditivos e planejamento urbano inteligente para salvar vidas.</p>
+    <p><a href="quiz.html" class="btn">Faça o Quiz e Planeje-se →</a></p>
+  </section>
 
-    <section id="monitoramento">
-      <h2>Monitoramento em Tempo Real</h2>
-      <p>Use IA, satélites e IoT para prever e alertar comunidades…</p>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <p>© 2025 SolucionaEnchentes | Desenvolvido pela equipe GS</p>
+  <!-- funcionalidades -->
+  <section class="section">
+    <h2 class="section-title">Nossas Funcionalidades</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Alertas Precoce</h3>
+        <p>Sistema 24h de notificação para riscos iminentes de enchente.</p>
+      </div>
+      <div class="card">
+        <h3>Mapeamento ao Vivo</h3>
+        <p>Visualização de níveis de rios e chuva em tempo real.</p>
+      </div>
+      <div class="card">
+        <h3>Planejamento Urbano</h3>
+        <p>Ferramentas de simulação para engenheiros e gestores.</p>
+      </div>
     </div>
+  </section>
+
+  <!-- footer -->
+  <footer>
+    <p>© 2025 Flood360 | Desenvolvido pela equipe GS</p>
   </footer>
 
-  <script src="./src/js/script.js"></script>
+  <script src="src/js/script.js"></script>
 </body>
 </html>
