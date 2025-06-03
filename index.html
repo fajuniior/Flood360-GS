@@ -16,24 +16,34 @@
       <nav>
         <ul class="nav__list">
           <li><a href="index.html" class="nav__link nav__link--active">Home</a></li>
-          <li><a href="sobre.html" class="nav__link">Sobre</a></li>
-          <li><a href="quiz.html" class="nav__link">Quiz</a></li>
-          <li><a href="contato.html" class="nav__link">Contato</a></li>
+          <li><a href="/src/pages/sobre.html" class="nav__link">Sobre</a></li>
+          <li><a href="/src/pages/quiz.html" class="nav__link">Quiz</a></li>
+          <li><a href="/src/pages/contato.html" class="nav__link">Contato</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- slideshow -->
+<main class="container">
+  <!-- Slideshow -->
   <section class="slideshow">
-    <div class="slide active" style="background-image:url('src/assets/slide1.jpg')"></div>
-    <div class="slide"        style="background-image:url('src/assets/slide2.jpg')"></div>
-    <div class="slide"        style="background-image:url('src/assets/slide3.jpg')"></div>
+    <div class="slide active" style="background-image: url('src/assets/slide1.jpg');"></div>
+    <div class="slide"        style="background-image: url('src/assets/slide2.jpg');"></div>
+    <div class="slide"        style="background-image: url('src/assets/slide3.jpg');"></div>
     <div class="slideshow__controls">
-      <button class="slideshow__btn slideshow__prev">‹</button>
-      <button class="slideshow__btn slideshow__next">›</button>
+      <button class="slideshow__btn slideshow__prev">&larr;</button>
+      <button class="slideshow__btn slideshow__next">&rarr;</button>
     </div>
   </section>
+
+  <!-- Exemplo de seção estática -->
+  <section class="section">
+    <h2 class="section-title">Enchentes no Brasil</h2>
+    <p>As enchentes no Brasil são tragédias anunciadas…</p>
+    <a href="pages/quiz.html" class="btn">Faça o Quiz</a>
+  </section>
+</main>
+
 
   <!-- chamada principal -->
   <section class="section">
@@ -63,7 +73,7 @@
 
   <!-- footer -->
   <footer>
-    <p>© 2025 Flood360 | Desenvolvido pela equipe GS</p>
+    <p>© 2025 Flood360 | Desenvolvido pela equipe Flood360</p>
   </footer>
 
   <script src="src/js/script.js"></script>
