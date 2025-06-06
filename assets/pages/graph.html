@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood360 - Gráficos de Análise</title>
+    
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS (Front-end Design) -->
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/graph-styles.css">
+    
+    <!-- Chart.js para gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Cabeçalho (Front-end Design) -->
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="../assets/images/logo/flood360_logo_circular_improved.png" alt="Flood360 Logo">
+                <span class="logo-text">Flood360</span>
+            </div>
+            
+            <!-- Menu de navegação (Front-end Design) -->
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Página Inicial</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="graph.html" class="active">Gráficos</a></li>
+                </ul>
+                
+                <!-- Menu hambúrguer (WebDev) -->
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Análise de Dados de Enchentes</h2>
+                <p class="section-description">
+                    Esta página apresenta a análise de dados de enchentes utilizando modelagem matemática para prever níveis de água e identificar riscos.
+                    Os gráficos abaixo mostram a simulação do nível do Rio Guaíba em Porto Alegre durante um período de 10 dias.
+                </p>
+                
+                <div class="graph-container">
+                    <div class="graph-card full-width">
+                        <h3>Monitoramento do Nível do Rio</h3>
+                        <div class="canvas-container">
+                            <canvas id="riverLevelChart"></canvas>
+                        </div>
+                        <div class="graph-info">
+                            <p><strong>Modelo:</strong> Polinomial de Grau 4</p>
+                            <p><strong>Precisão (R²):</strong> 0,9939</p>
+                        </div>
+                    </div>
+                    
+                    <div class="graph-card">
+                        <h3>Previsão de Risco</h3>
+                        <div class="risk-indicators">
+                            <div class="risk-level">
+                                <div class="risk-bar" id="riskBar"></div>
+                                <div class="risk-labels">
+                                    <span>Normal</span>
+                                    <span>Atenção</span>
+                                    <span>Risco</span>
+                                    <span>Risco Alto</span>
+                                </div>
+                            </div>
+                            <div class="risk-stats">
+                                <div class="stat-box">
+                                    <h4>Nível Máximo</h4>
+                                    <p id="maxLevel">2,72m</p>
+                                </div>
+                                <div class="stat-box">
+                                    <h4>Dias em Risco</h4>
+                                    <p id="riskDays">4,77</p>
+                                </div>
+                                <div class="stat-box">
+                                    <h4>Dia do Pico</h4>
+                                    <p id="peakDay">7,33</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="graph-card full-width">
+                    <h3>Dados Históricos</h3>
+                    <div class="table-container">
+                        <table id="historicalData">
+                            <thead>
+                                <tr>
+                                    <th>Dia</th>
+                                    <th>Data</th>
+                                    <th>Nível (m)</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Dados serão preenchidos via JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="graph-explanation">
+                    <h3>Sobre a Modelagem Matemática</h3>
+                    <p>
+                        A modelagem matemática utilizada neste projeto é baseada em uma função polinomial de grau 4, 
+                        que permite prever o comportamento do nível do rio com base em dados históricos e condições atuais.
+                    </p>
+                    <div class="equation">
+                        f(x) = -0,0072x⁴ + 0,0760x³ - 0,3151x² + 0,6911x + 0,4533
+                    </div>
+                    <p>
+                        Esta equação foi desenvolvida através da análise de regressão dos dados coletados, 
+                        permitindo identificar padrões e prever comportamentos futuros do nível do rio.
+                    </p>
+                    <p>
+                        O sistema de alerta é baseado nos seguintes níveis:
+                    </p>
+                    <ul class="alert-levels">
+                        <li class="normal">Normal: 0,00m - 1,50m</li>
+                        <li class="attention">Atenção: 1,50m - 2,00m</li>
+                        <li class="risk">Risco: 2,00m - 2,50m</li>
+                        <li class="high-risk">Risco Alto: Acima de 2,50m</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé (Front-end Design) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Flood360</h3>
+                    <p>Tecnologia para prevenção de enchentes e salvamento de vidas.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Links Rápidos</h3>
+                    <div class="footer-links">
+                        <a href="../index.html">Página Inicial</a>
+                        <a href="../quiz/index.html">Quiz Interativo</a>
+                        <a href="index.html">Gráficos de Análise</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Flood360. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Seletor de temas (WebDev) -->
+    <div class="theme-selector">
+        <div class="theme-btn theme-blue" data-theme="blue"></div>
+        <div class="theme-btn theme-green" data-theme="green"></div>
+        <div class="theme-btn theme-dark" data-theme="dark"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/menu.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/graph.js"></script>
+</body>
+</html>
