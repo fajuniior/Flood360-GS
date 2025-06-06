@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood360 - Quiz Interativo</title>
+    
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS (Front-end Design) -->
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/quiz-styles.css">
+</head>
+<body>
+    <!-- Cabeçalho (Front-end Design) -->
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="../assets/images/logo/flood360_logo_circular_improved.png" alt="Flood360 Logo">
+                <span class="logo-text">Flood360</span>
+            </div>
+            
+            <!-- Menu de navegação (Front-end Design) -->
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Página Inicial</a></li>
+                    <li><a href="quiz.html" class="active">Quiz</a></li>
+                    <li><a href="graph.html">Gráficos</a></li>
+                </ul>
+                
+                <!-- Menu hambúrguer (WebDev) -->
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Quiz Interativo: Enchentes e Prevenção</h2>
+                <p class="section-description">
+                    Teste seus conhecimentos sobre enchentes, prevenção e tecnologias de monitoramento.
+                    Responda às 10 perguntas e descubra o quanto você sabe sobre este importante tema!
+                </p>
+                
+                <!-- Carrossel de imagens (WebDev) -->
+                <div id="quiz-slideshow" class="slideshow-container">
+                    <div class="slide fade">
+                        <img src="../assets/images/slides/slide1.jpg" alt="Sistema de monitoramento Flood360">
+                        <div class="slide-caption">Sistema de monitoramento em tempo real</div>
+                    </div>
+                    <div class="slide fade">
+                        <img src="../assets/images/slides/slide2.jpg" alt="Aplicativo Flood360">
+                        <div class="slide-caption">Aplicativo móvel com alertas personalizados</div>
+                    </div>
+                    <div class="slide fade">
+                        <img src="../assets/images/slides/slide3.jpg" alt="Sensores Flood360">
+                        <div class="slide-caption">Rede de sensores instalados em áreas críticas</div>
+                    </div>
+                    <a class="prev">&#10094;</a>
+                    <a class="next">&#10095;</a>
+                    <div class="dots-container">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                
+                <!-- Quiz (WebDev) -->
+                <div class="quiz-container">
+                    <div id="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="progress-text">Pergunta <span id="current-question">1</span> de 10</div>
+                    </div>
+                    
+                    <div id="quiz-content">
+                        <!-- As perguntas serão inseridas aqui via JavaScript -->
+                    </div>
+                    
+                    <div class="quiz-navigation">
+                        <button id="prev-btn" class="btn">Anterior</button>
+                        <button id="next-btn" class="btn">Próxima</button>
+                        <button id="submit-btn" class="btn" style="display: none;">Ver Resultado</button>
+                    </div>
+                </div>
+                
+                <!-- Resultado do Quiz (WebDev) -->
+                <div id="quiz-result" style="display: none;">
+                    <h3>Seu Resultado</h3>
+                    <div class="result-score">
+                        <div class="score-circle">
+                            <span id="score-value">0</span>/<span id="max-score">30</span>
+                        </div>
+                        <p id="score-message"></p>
+                    </div>
+                    
+                    <div class="result-details">
+                        <h4>Detalhes das Respostas</h4>
+                        <div id="result-answers">
+                            <!-- Os detalhes das respostas serão inseridos aqui via JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <button id="restart-btn" class="btn">Reiniciar Quiz</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé (Front-end Design) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Flood360</h3>
+                    <p>Tecnologia para prevenção de enchentes e salvamento de vidas.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Links Rápidos</h3>
+                    <div class="footer-links">
+                        <a href="../index.html">Página Inicial</a>
+                        <a href="index.html">Quiz Interativo</a>
+                        <a href="../graph/index.html">Gráficos de Análise</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Flood360. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Seletor de temas (WebDev) -->
+    <div class="theme-selector">
+        <div class="theme-btn theme-blue" data-theme="blue"></div>
+        <div class="theme-btn theme-green" data-theme="green"></div>
+        <div class="theme-btn theme-dark" data-theme="dark"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/menu.js"></script>
+    <script src="../assets/js/slideshow.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>
