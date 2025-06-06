@@ -323,7 +323,7 @@ body {
 /* Slideshow específico para a seção 'O Problema' */
 #problema .slideshow-container {
     position: relative;
-    max-width: 100%; /* Ajusta à largura do container */
+    max-width: 100%; /* Ajusta à largura do container pai */
     margin: auto;
     overflow: hidden;
     border-radius: 10px;
@@ -355,14 +355,14 @@ body {
     cursor: pointer;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%); 
     width: auto;
     padding: 16px;
     color: white;
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
-
+   
     user-select: none;
     background-color: rgba(0, 0, 0, 0.3);
 }
@@ -403,6 +403,7 @@ body {
     background-color: white;
 }
 
+
 #quiz-slideshow {
     position: relative;
     max-width: 900px; 
@@ -427,6 +428,8 @@ body {
     animation-name: fade;
     animation-duration: 1.5s;
 }
+
+
 
 #quiz-slideshow .prev, #quiz-slideshow .next {
     cursor: pointer;
@@ -479,6 +482,7 @@ body {
     background-color: #717171;
 }
 
+
 #quiz-slideshow .slide-caption {
     position: absolute;
     bottom: 0;
@@ -491,7 +495,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* --- TEMA DARK --- */
+/* --- TEMA DARK REFEITO --- */
 body.theme-dark {
     background-color: var(--dark-bg); /* Preto Puro */
     color: var(--dark-text-primary); /* Branco Puro */
@@ -891,7 +895,7 @@ body.theme-dark .chart-container {
     min-height: 1em; /* Evita que o layout pule quando o erro aparece/some */
 }
 
-/* Ajustes para tema verde (NÃO ALTERAR) */
+/* Ajustes para tema verde */
 body.theme-green .header,
 body.theme-green .footer,
 body.theme-green .btn {
@@ -910,7 +914,7 @@ body.theme-green .contact-form textarea:focus {
     box-shadow: 0 0 5px rgba(42, 157, 143, 0.3);
 }
 
-/* Ajustes para tema azul */
+/* Ajustes para tema azul (padrão, NÃO ALTERAR) */
 body.theme-blue .header,
 body.theme-blue .footer,
 body.theme-blue .btn {
