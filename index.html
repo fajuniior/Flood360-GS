@@ -1,81 +1,258 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Flood360 – Soluções Contra Enchentes</title>
-  <link rel="stylesheet" href="src/css/estilo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood360 - Prevenção de Enchentes</title>
+    
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS (Front-end Design) -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
+    <!-- Cabeçalho (Front-end Design) -->
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="assets/images/logo/flood360_logo_circular_improved.png" alt="Flood360 Logo">
+                <span class="logo-text">Flood360</span>
+            </div>
+            
+            <!-- Menu de navegação (Front-end Design) -->
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#problema" class="active">O Problema</a></li>
+                    <li><a href="#tecnologias">Tecnologias</a></li>
+                    <li><a href="#objetivos">Objetivos</a></li>
+                    <li><a href="#publico">Público-alvo</a></li>
+                    <li><a href="#beneficios">Benefícios</a></li>
+                    <li><a href="#aplicacao">Aplicação</a></li>
+                    <li><a href="pages/quiz.html">Quiz</a></li>
+                    <li><a href="pages/graph.html">Gráficos</a></li>
+                </ul>
+                
+                <!-- Menu hambúrguer (WebDev) -->
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
 
-  <!-- header -->
-  <header>
-    <div class="container">
-      <a href="index.html" class="logo">Flood<span>360</span></a>
-      <button class="nav__toggle" aria-label="Abrir menu">☰</button>
-      <nav>
-        <ul class="nav__list">
-          <li><a href="index.html" class="nav__link nav__link--active">Home</a></li>
-          <li><a href="/src/pages/sobre.html" class="nav__link">Sobre</a></li>
-          <li><a href="/src/pages/quiz.html" class="nav__link">Quiz</a></li>
-          <li><a href="/src/pages/contato.html" class="nav__link">Contato</a></li>
-        </ul>
-      </nav>
+    <!-- Conteúdo principal (Front-end Design) -->
+    <main class="main-content">
+        <!-- Seção 1: O problema (Front-end Design) -->
+        <section id="problema" class="section">
+            <div class="container">
+                <h2 class="section-title">O Problema</h2>
+                <div class="section-content">
+                    <div class="text-content">
+                        <p>Enchentes no Brasil afetam mais de 8 milhões de pessoas anualmente, causando perdas de vidas e prejuízos bilionários.</p>
+                        <p>A falta de sistemas de alerta eficientes e monitoramento em tempo real dificulta a prevenção e resposta rápida a desastres.</p>
+                        <a href="#" class="btn">Saiba mais</a>
+                    </div>
+                    <div class="image-content slideshow-container" id="problema-slideshow">
+                        <div class="slide fade">
+                            <img src="assets/images/sections/enchente_problema.jpg" alt="Área urbana afetada por enchentes 1">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/images/sections/enchente_problema2.jpg" alt="Área urbana afetada por enchentes 2">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/images/sections/enchente_problema3.jpg" alt="Área urbana afetada por enchentes 3">
+                        </div>
+                        <a class="prev">&#10094;</a>
+                        <a class="next">&#10095;</a>
+                        <div class="dots-container">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: Tecnologias (Front-end Design) -->
+        <section id="tecnologias" class="section">
+            <div class="container">
+                <h2 class="section-title">Tecnologias</h2>
+                <div class="section-content">
+                    <div class="image-content">
+                        <img src="assets/images/sections/tecnologias.jpg" alt="Sensores e tecnologias de monitoramento">
+                    </div>
+                    <div class="text-content">
+                        <p>Utilizamos sensores IoT, inteligência artificial e modelagem matemática para prever e monitorar níveis de água em tempo real.</p>
+                        <p>Nossa plataforma integra dados meteorológicos, históricos e topográficos para criar alertas precisos e personalizados.</p>
+                        <a href="#" class="btn">Detalhes técnicos</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 3: Objetivos (Front-end Design) -->
+        <section id="objetivos" class="section">
+            <div class="container">
+                <h2 class="section-title">Objetivos</h2>
+                <div class="section-content">
+                    <div class="text-content">
+                        <p>Reduzir em 70% o número de vítimas fatais em eventos de enchentes através de alertas precoces e precisos.</p>
+                        <p>Criar uma rede nacional de monitoramento integrado que permita ações preventivas e evacuações organizadas.</p>
+                        <a href="#" class="btn">Nossa missão</a>
+                    </div>
+                    <div class="image-content">
+                        <img src="assets/images/sections/objetivos.jpg" alt="Equipe de resgate em ação">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 4: Público-alvo (Front-end Design) -->
+        <section id="publico" class="section">
+            <div class="container">
+                <h2 class="section-title">Público-alvo</h2>
+                <div class="section-content">
+                    <div class="image-content">
+                        <img src="assets/images/sections/publico_alvo_gerada.png" alt="Comunidades, Defesa Civil e gestores públicos sendo atendidos pelo Flood360">
+                    </div>
+                    <div class="text-content">
+                        <p>Comunidades em áreas de risco, órgãos de Defesa Civil e gestores públicos responsáveis por planos de contingência.</p>
+                        <p>Mais de 8 milhões de brasileiros que vivem em áreas vulneráveis a inundações e deslizamentos.</p>
+                        <a href="#" class="btn">Impacto social</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 5: Benefícios (Front-end Design) -->
+        <section id="beneficios" class="section">
+            <div class="container">
+                <h2 class="section-title">Benefícios</h2>
+                <div class="section-content">
+                    <div class="text-content">
+                        <p>Alertas antecipados que permitem evacuação segura e proteção de bens essenciais antes da ocorrência de enchentes.</p>
+                        <p>Economia de bilhões em danos materiais e infraestrutura, além da preservação de vidas e redução do impacto psicológico.</p>
+                        <a href="#" class="btn">Resultados esperados</a>
+                    </div>
+                    <div class="image-content">
+                        <img src="assets/images/sections/beneficios_gerada.png" alt="Família protegida dos efeitos das enchentes pelos benefícios do Flood360">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 6: Aplicação (Front-end Design) -->
+        <section id="aplicacao" class="section">
+            <div class="container">
+                <h2 class="section-title">Aplicação</h2>
+                <div class="section-content">
+                    <div class="image-content">
+                        <img src="assets/images/sections/aplicacao_gerada.png" alt="Aplicativo Flood360 mostrando alertas e painel de controle para autoridades">
+                    </div>
+                    <div class="text-content">
+                        <p>Notificações em tempo real via aplicativo móvel, SMS e canais oficiais, com rotas de evacuação personalizadas.</p>
+                        <p>Painel de controle para autoridades com mapeamento de áreas críticas e coordenação de recursos de emergência.</p>
+                        <a href="#" class="btn">Demonstração</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de galeria removida conforme solicitado -->
+
+        <!-- Formulário de contato (WebDev) -->
+        <section id="contato" class="section">
+            <div class="container">
+                <h2 class="section-title">Entre em Contato</h2>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Assunto</label>
+                        <input type="text" id="subject" name="subject" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <span class="error-message"></span>
+                    </div>
+                    <button type="submit" class="btn">Enviar mensagem</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé (Front-end Design) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Flood360</h3>
+                    <p>Tecnologia para prevenção de enchentes e salvamento de vidas.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Links Rápidos</h3>
+                    <div class="footer-links">
+                        <a href="#problema">O Problema</a>
+                        <a href="#tecnologias">Tecnologias</a>
+                        <a href="#objetivos">Objetivos</a>
+                        <a href="#publico">Público-alvo</a>
+                        <a href="#beneficios">Benefícios</a>
+                        <a href="#aplicacao">Aplicação</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Recursos</h3>
+                    <div class="footer-links">
+                        <a href="quiz/index.html">Quiz Interativo</a>
+                        <a href="graph/index.html">Gráficos de Análise</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Flood360. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Seletor de temas (WebDev) -->
+    <div class="theme-selector">
+        <div class="theme-btn theme-blue" data-theme="blue"></div>
+        <div class="theme-btn theme-green" data-theme="green"></div>
+        <div class="theme-btn theme-dark" data-theme="dark"></div>
     </div>
-  </header>
 
-<main class="container">
-  <!-- Slideshow -->
-  <section class="slideshow">
-    <div class="slide active" style="background-image: url('src/assets/slide1.jpg');"></div>
-    <div class="slide"        style="background-image: url('src/assets/slide2.jpg');"></div>
-    <div class="slide"        style="background-image: url('src/assets/slide3.jpg');"></div>
-    <div class="slideshow__controls">
-      <button class="slideshow__btn slideshow__prev">&larr;</button>
-      <button class="slideshow__btn slideshow__next">&rarr;</button>
+    <!-- Indicador de seção atual (Front-end Design) -->
+    <div class="section-indicator">
+        <span class="indicator-dot" data-section="problema"></span>
+        <span class="indicator-dot" data-section="tecnologias"></span>
+        <span class="indicator-dot" data-section="objetivos"></span>
+        <span class="indicator-dot" data-section="publico"></span>
+        <span class="indicator-dot" data-section="beneficios"></span>
+        <span class="indicator-dot" data-section="aplicacao"></span>
     </div>
-  </section>
 
-  <!-- Exemplo de seção estática -->
-  <section class="section">
-    <h2 class="section-title">Enchentes no Brasil</h2>
-    <p>As enchentes no Brasil são tragédias anunciadas…</p>
-    <a href="pages/quiz.html" class="btn">Faça o Quiz</a>
-  </section>
-</main>
-
-
-  <!-- chamada principal -->
-  <section class="section">
-    <h2 class="section-title">Enchentes no Brasil: Soluções Tecnológicas</h2>
-    <p>Monitoramento em tempo real, alertas preditivos e planejamento urbano inteligente para salvar vidas.</p>
-    <p><a href="quiz.html" class="btn">Faça o Quiz e Planeje-se →</a></p>
-  </section>
-
-  <!-- funcionalidades -->
-  <section class="section">
-    <h2 class="section-title">Nossas Funcionalidades</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Alertas Precoce</h3>
-        <p>Sistema 24h de notificação para riscos iminentes de enchente.</p>
-      </div>
-      <div class="card">
-        <h3>Mapeamento ao Vivo</h3>
-        <p>Visualização de níveis de rios e chuva em tempo real.</p>
-      </div>
-      <div class="card">
-        <h3>Planejamento Urbano</h3>
-        <p>Ferramentas de simulação para engenheiros e gestores.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- footer -->
-  <footer>
-    <p>© 2025 Flood360 | Desenvolvido pela equipe Flood360</p>
-  </footer>
-
-  <script src="src/js/script.js"></script>
+    <!-- JavaScript (WebDev) -->
+    <script src="assets/js/slideshow.js"></script>
+    <script src="assets/js/validation.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/menu.js"></script>
 </body>
 </html>
