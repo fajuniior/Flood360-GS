@@ -1,0 +1,6 @@
+RM 564005 – Fabio Pereira Rogerio Júnior
+RM 563619 – Sebastian Iriarte Gonzales
+
+Este arquivo contém informações sobre os integrantes do grupo e o link para o repositório do projeto.
+
+Link do repositório: https://github.com/fajuniior/Flood360-GS.git
