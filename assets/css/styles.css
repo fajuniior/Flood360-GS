@@ -1,0 +1,941 @@
+/*
+   Estilos principais - Front-end Design
+   Flood360 - Prevenção de Enchentes
+*/
+
+:root {
+    /* Paleta de cores Flood360 */
+    --primary-blue: #0077cc;
+    --primary-green: #2a9d8f;
+    --light-blue: #a8dadc;
+    --white: #ffffff;
+    --dark-text: #1d3557;
+    --light-text: #f1faee;
+    --warning: #e63946;
+    --warning-light: #ffccd5;
+    --background-light: #f8f9fa;
+
+    /* --- TEMA DARK REFEITO (V4 - Fundo Preto Puro) --- */
+    --dark-bg: #121212; /* Fundo Preto Puro */
+    --dark-surface: #1e1e1e; /* Superfície Cinza Muito Escuro (Material Design Dark) */
+    --dark-border: #333333; /* Borda Cinza Escuro */
+    --dark-text-primary: #e0e0e0; /* Texto Branco Puro */
+    --dark-text-secondary: #b0b0b0; /* Texto Cinza Claro */
+    --dark-primary-accent: #bb86fc; /* Azul Claro (Material Design) */
+    --dark-secondary-accent: #03dac6; /* Verde Água Claro (Material Design) */
+    --dark-error: #cf6679; /* Rosa Claro para Erros */
+    --dark-button-text: #000000; /* Texto Preto para botões claros */
+    --dark-link-hover: #a5d6a7; /* Verde mais claro para hover de link */
+
+    /* Espaçamentos */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 5rem;
+
+    /* Fontes */
+    --font-main: 'Roboto', sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--background-light);
+    color: var(--dark-text);
+    font-family: var(--font-main);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
+}
+
+/* Header e navegação */
+.header {
+    background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+    color: var(--white);
+    padding: var(--spacing-sm) 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: var(--spacing-sm);
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: var(--font-heading);
+    color: var(--white); /* Garante que o texto do logo seja sempre branco */
+}
+
+.nav-menu {
+    display: flex;
+}
+
+.nav-menu li {
+    margin-left: var(--spacing-md);
+}
+
+.nav-menu a {
+    color: var(--white);
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--white);
+    transition: width 0.3s ease;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: var(--white);
+    transition: all 0.3s ease;
+}
+
+/* Seções principais */
+.main-content {
+    margin-top: 80px; /* Ajuste conforme altura do header */
+    padding: var(--spacing-lg) 0;
+}
+
+.section {
+    padding: var(--spacing-xl) 0;
+    scroll-margin-top: 80px; /* Ajuste conforme altura do header */
+    transition: background-color 0.3s ease;
+}
+
+.section:nth-child(even) {
+    background-color: rgba(168, 218, 220, 0.2); /* light-blue com opacidade */
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-blue);
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.section-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.text-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.image-content {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.image-content img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+    color: var(--white);
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    margin-top: var(--spacing-sm);
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Rodapé */
+.footer {
+    background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+    color: var(--white);
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-links a {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    color: var(--light-text);
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Tema seletor */
+.theme-selector {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1001; /* Acima do indicador de seção */
+}
+
+.theme-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid var(--white);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-btn:hover {
+    transform: scale(1.2);
+}
+
+.theme-btn.active {
+    box-shadow: 0 0 0 3px var(--primary-blue); /* Indica tema ativo */
+}
+
+.theme-blue {
+    background-color: var(--primary-blue);
+}
+
+.theme-green {
+    background-color: var(--primary-green);
+}
+
+.theme-dark {
+    background-color: #333; /* Cor do botão para tema escuro */
+}
+
+/* Indicador de seção atual */
+.section-indicator {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
+}
+
+.indicator-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--light-blue);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator-dot.active {
+    background-color: var(--primary-blue);
+    transform: scale(1.3);
+}
+
+/* Slideshow específico para a seção 'O Problema' */
+#problema .slideshow-container {
+    position: relative;
+    max-width: 100%; /* Ajusta à largura do container pai */
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#problema .slide {
+    display: none; /* Esconde todos os slides por padrão */
+}
+
+#problema .slide img {
+    width: 100%;
+    vertical-align: middle;
+    border-radius: 0; /* Remove borda da imagem individual */
+    box-shadow: none; /* Remove sombra da imagem individual */
+}
+
+#problema .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+#problema .prev, #problema .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Better vertical centering */
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    /* border-radius: 0 3px 3px 0; */ /* Removed for individual control */
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#problema .prev {
+    left: 0;
+    border-radius: 0 3px 3px 0; /* Rounded corners on the right */
+}
+
+#problema .next {
+    right: 0;
+    border-radius: 3px 0 0 3px; /* Rounded corners on the left */
+}
+
+#problema .prev:hover, #problema .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#problema .dots-container {
+    text-align: center;
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+}
+
+#problema .dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+#problema .dot.active, #problema .dot:hover {
+    background-color: white;
+}
+
+/* Styles specific to the Quiz page slideshow (Based on #problema styles) */
+#quiz-slideshow {
+    position: relative;
+    max-width: 900px; /* Adjust width based on Screenshot_23 visual */
+    margin: var(--spacing-md) auto var(--spacing-lg) auto; /* Center and add bottom margin */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#quiz-slideshow .slide {
+    display: none; /* Hide slides by default */
+}
+
+#quiz-slideshow .slide img {
+    width: 100%;
+    vertical-align: middle;
+    border-radius: 0; /* No radius on image if container has it */
+    box-shadow: none;
+}
+
+#quiz-slideshow .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+/* Re-use fade animation if needed */
+/* @keyframes fade { from {opacity: .4} to {opacity: 1} } */
+
+#quiz-slideshow .prev, #quiz-slideshow .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 3px;
+    user-select: none;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+#quiz-slideshow .prev {
+    left: 10px;
+}
+
+#quiz-slideshow .next {
+    right: 10px;
+}
+
+#quiz-slideshow .prev:hover, #quiz-slideshow .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+#quiz-slideshow .dots-container {
+    text-align: center;
+    position: absolute;
+    bottom: 15px; /* Position dots relative to bottom */
+    width: 100%;
+}
+
+#quiz-slideshow .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+#quiz-slideshow .dot.active, #quiz-slideshow .dot:hover {
+    background-color: #717171;
+}
+
+/* Ensure slide captions are styled if they exist in quiz slideshow */
+#quiz-slideshow .slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--white);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* --- TEMA DARK REFEITO (V4 - Fundo Preto Puro) --- */
+body.theme-dark {
+    background-color: var(--dark-bg); /* Preto Puro */
+    color: var(--dark-text-primary); /* Branco Puro */
+}
+
+/* Header e Footer no Tema Escuro (Mantendo gradiente original, mas garantindo texto branco) */
+body.theme-dark .header,
+body.theme-dark .footer {
+    background: linear-gradient(90deg, #6200ee 0%, #bb86fc 100%); /* Mantém gradiente escuro */
+    color: var(--white); /* Garante texto branco no header/footer */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); /* Sombra mais forte */
+}
+
+body.theme-dark .logo-text,
+body.theme-dark .nav-menu a,
+body.theme-dark .footer-title,
+body.theme-dark .footer-links a,
+body.theme-dark .copyright p {
+    color: var(--white); /* Garante texto branco nos elementos do header/footer */
+}
+
+body.theme-dark .nav-menu a:hover::after,
+body.theme-dark .nav-menu a.active::after {
+    background-color: var(--white);
+}
+
+body.theme-dark .hamburger span {
+    background-color: var(--white);
+}
+
+/* Seções no Tema Escuro */
+body.theme-dark .section {
+    border-bottom: 1px solid var(--dark-border);
+}
+
+body.theme-dark .section:nth-child(even) {
+    background-color: var(--dark-surface); /* Fundo cinza muito escuro para seções pares */
+}
+
+/* Títulos e Textos no Tema Escuro (Alto Contraste) */
+body.theme-dark .section-title {
+    color: var(--dark-text-primary); /* Títulos brancos */
+}
+
+body.theme-dark p,
+body.theme-dark .section-description,
+body.theme-dark .text-content p,
+body.theme-dark li /* Para listas gerais */ {
+    color: var(--dark-text-primary); /* Texto principal branco */
+    line-height: 1.7; /* Melhora legibilidade */
+}
+
+/* Botões no Tema Escuro */
+body.theme-dark .btn {
+    background: linear-gradient(90deg, var(--dark-primary-accent) 0%, var(--dark-secondary-accent) 100%);
+    color: var(--dark-button-text); /* Texto preto para contraste com fundo claro do botão */
+    font-weight: bold;
+    border: none; /* Remove borda padrão */
+}
+
+body.theme-dark .btn:hover {
+    box-shadow: 0 5px 15px rgba(144, 202, 249, 0.4); /* Sombra com cor primária */
+    transform: translateY(-2px);
+}
+
+body.theme-dark .btn:disabled {
+    background: #444; /* Cinza mais escuro para botão desabilitado */
+    color: #888; /* Texto cinza claro */
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Indicadores no Tema Escuro */
+body.theme-dark .indicator-dot {
+    background-color: #555;
+}
+
+body.theme-dark .indicator-dot.active {
+    background-color: var(--dark-primary-accent);
+}
+
+/* Formulário de Contato no Tema Escuro */
+body.theme-dark .contact-form label {
+    color: var(--dark-text-primary); /* Label branca */
+    font-weight: 500;
+}
+
+body.theme-dark .contact-form input[type="text"],
+body.theme-dark .contact-form input[type="email"],
+body.theme-dark .contact-form textarea {
+    background-color: var(--dark-surface); /* Fundo cinza muito escuro */
+    color: var(--dark-text-primary); /* Texto branco */
+    border: 1px solid var(--dark-border);
+    border-radius: 5px;
+    padding: var(--spacing-sm);
+}
+
+body.theme-dark .contact-form input[type="text"]:focus,
+body.theme-dark .contact-form input[type="email"]:focus,
+body.theme-dark .contact-form textarea:focus {
+    border-color: var(--dark-primary-accent);
+    box-shadow: 0 0 8px rgba(144, 202, 249, 0.5); /* Sombra azul claro no foco */
+    outline: none;
+}
+
+body.theme-dark .contact-form .error-message {
+    color: var(--dark-error); /* Rosa claro para erros */
+    font-weight: 500;
+}
+
+/* Slideshows Gerais no Tema Escuro */
+body.theme-dark .slideshow-container {
+    background-color: var(--dark-surface);
+    border: 1px solid var(--dark-border);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+body.theme-dark .slide-caption {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--dark-text-primary);
+}
+
+body.theme-dark .prev,
+body.theme-dark .next {
+    color: var(--white);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+body.theme-dark .prev:hover,
+body.theme-dark .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+body.theme-dark .dots-container .dot {
+    background-color: #555;
+}
+
+body.theme-dark .dots-container .dot.active,
+body.theme-dark .dots-container .dot:hover {
+    background-color: var(--dark-primary-accent);
+}
+
+/* Quiz no Tema Escuro (Alto Contraste) */
+body.theme-dark .quiz-container,
+body.theme-dark #quiz-result {
+    background-color: var(--dark-surface);
+    border: 1px solid var(--dark-border);
+    color: var(--dark-text-primary); /* Texto padrão branco */
+    padding: var(--spacing-md);
+    border-radius: 10px;
+}
+
+body.theme-dark .quiz-container .question-text,
+body.theme-dark #quiz-result h3,
+body.theme-dark #quiz-result h4 {
+    color: var(--dark-text-primary); /* Títulos brancos */
+    font-family: var(--font-heading);
+    margin-bottom: var(--spacing-sm);
+}
+
+body.theme-dark .quiz-container .option {
+    background-color: #333; /* Fundo cinza escuro para opções */
+    border: 1px solid var(--dark-border);
+    color: var(--dark-text-primary); /* Texto da opção branco */
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+body.theme-dark .quiz-container .option:hover {
+    background-color: #444;
+    border-color: #777;
+}
+
+body.theme-dark .quiz-container .option.selected {
+    background-color: var(--dark-primary-accent);
+    border-color: var(--dark-primary-accent);
+    color: var(--dark-button-text); /* Texto preto na opção selecionada (azul claro) */
+    font-weight: bold;
+}
+
+body.theme-dark .progress-bar {
+    background-color: #444;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+body.theme-dark .progress-fill {
+    background-color: var(--dark-secondary-accent); /* Verde Água Claro */
+    height: 10px;
+    border-radius: 5px;
+}
+
+body.theme-dark .progress-text {
+    color: var(--dark-text-secondary);
+    font-size: 0.9rem;
+    margin-top: var(--spacing-xs);
+}
+
+body.theme-dark #quiz-result .result-score {
+    border: 2px solid var(--dark-primary-accent);
+    background-color: #2a2a2a;
+}
+
+body.theme-dark #quiz-result .score-circle {
+    border-color: var(--dark-secondary-accent);
+    color: var(--dark-secondary-accent);
+}
+
+body.theme-dark #quiz-result #score-message {
+    color: var(--dark-text-primary); /* Garante texto branco na mensagem */
+    font-weight: 500;
+}
+
+body.theme-dark #quiz-result #score-message.baixo-risco {
+    background-color: rgba(128, 203, 196, 0.15); /* Fundo Verde Água Claro */
+    border: 1px solid var(--dark-secondary-accent);
+    color: var(--dark-secondary-accent);
+}
+
+body.theme-dark #quiz-result #score-message.moderado-risco {
+    background-color: rgba(255, 213, 79, 0.15); /* Amarelo */
+    border: 1px solid #ffd54f;
+    color: #ffd54f;
+}
+
+body.theme-dark #quiz-result #score-message.alto-risco {
+    background-color: rgba(244, 143, 177, 0.15); /* Fundo Rosa Claro */
+    border: 1px solid var(--dark-error);
+    color: var(--dark-error);
+}
+
+/* Gráficos e Tabelas no Tema Escuro (Alto Contraste) */
+body.theme-dark .graph-container,
+body.theme-dark .graph-card,
+body.theme-dark .table-container,
+body.theme-dark .graph-explanation,
+body.theme-dark .risk-indicators .stat-box {
+    background-color: var(--dark-surface);
+    border: 1px solid var(--dark-border);
+    color: var(--dark-text-primary); /* Texto padrão branco */
+    padding: var(--spacing-md);
+    border-radius: 10px;
+}
+
+body.theme-dark .graph-card h3,
+body.theme-dark .graph-explanation h3,
+body.theme-dark .stat-box h4 {
+    color: var(--dark-text-primary); /* Títulos brancos */
+    font-family: var(--font-heading);
+    margin-bottom: var(--spacing-sm);
+}
+
+body.theme-dark .table-container table {
+    background-color: var(--dark-surface);
+    color: var(--dark-text-primary);
+    width: 100%;
+    border-collapse: collapse;
+}
+
+body.theme-dark .table-container th {
+    background-color: #333; /* Cabeçalho cinza escuro */
+    color: var(--dark-text-primary); /* Texto do cabeçalho branco */
+    padding: var(--spacing-sm);
+    text-align: left;
+    border-bottom: 2px solid var(--dark-border);
+}
+
+body.theme-dark .table-container td {
+    border-bottom: 1px solid var(--dark-border);
+    color: var(--dark-text-primary); /* Texto da célula branco */
+    padding: var(--spacing-sm);
+}
+
+body.theme-dark .table-container tr:nth-child(even) td {
+    background-color: #2a2a2a; /* Fundo um pouco diferente para linhas pares */
+}
+
+body.theme-dark .risk-indicators .risk-bar {
+    background-color: #444;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+body.theme-dark .risk-indicators .risk-fill {
+    height: 15px;
+    border-radius: 5px;
+}
+
+body.theme-dark .risk-indicators .risk-labels span {
+    color: var(--dark-text-secondary);
+    font-size: 0.9rem;
+}
+
+body.theme-dark .risk-indicators .stat-box p {
+    color: var(--dark-text-primary); /* Texto dentro do stat-box branco */
+    font-size: 1.5rem; /* Destaca o número */
+    font-weight: bold;
+}
+
+body.theme-dark .graph-explanation .equation {
+    background-color: #333;
+    border: 1px solid var(--dark-border);
+    color: var(--dark-text-secondary);
+    padding: var(--spacing-sm);
+    border-radius: 5px;
+    font-family: monospace;
+}
+
+body.theme-dark .alert-levels li {
+    color: var(--dark-text-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Cores dos níveis de alerta no tema escuro */
+body.theme-dark .alert-levels li.normal::before { background-color: #81c784; } /* Verde Claro */
+body.theme-dark .alert-levels li.attention::before { background-color: #ffd54f; } /* Amarelo Claro */
+body.theme-dark .alert-levels li.risk::before { background-color: #ffb74d; } /* Laranja Claro */
+body.theme-dark .alert-levels li.high-risk::before { background-color: var(--dark-error); } /* Rosa Claro */
+
+/* Ajustes finais para garantir contraste */
+body.theme-dark a {
+    color: var(--dark-primary-accent); /* Links em azul claro por padrão */
+    text-decoration: none;
+}
+
+body.theme-dark a:hover {
+    color: var(--dark-link-hover); /* Links em verde mais claro no hover */
+    text-decoration: underline;
+}
+
+/* Sobrescreve links específicos que devem ser brancos */
+body.theme-dark .nav-menu a,
+body.theme-dark .footer-links a {
+    color: var(--white);
+}
+body.theme-dark .nav-menu a:hover,
+body.theme-dark .footer-links a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+/* Ajustes para Chart.js no tema escuro */
+body.theme-dark .chart-container {
+    background-color: var(--dark-surface);
+    padding: var(--spacing-sm);
+    border-radius: 10px;
+}
+
+/* A cor do texto do gráfico é definida via JS, mas podemos definir padrões */
+canvas {
+    /* Estilos padrão para canvas, se necessário */
+}
+
+/* Aprimoramento do Formulário de Contato (Campos Visíveis) */
+.contact-form .form-group {
+    margin-bottom: var(--spacing-sm);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+    color: var(--dark-text);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    background-color: var(--white);
+    color: var(--dark-text);
+    box-sizing: border-box; /* Garante que padding não aumente o tamanho total */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 5px rgba(0, 119, 204, 0.3);
+}
+
+.contact-form textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+.contact-form .error-message {
+    color: var(--warning);
+    font-size: 0.9rem;
+    margin-top: var(--spacing-xs);
+    display: block; /* Garante que a mensagem de erro ocupe espaço */
+    min-height: 1em; /* Evita que o layout pule quando o erro aparece/some */
+}
+
+/* Ajustes para tema verde (NÃO ALTERAR) */
+body.theme-green .header,
+body.theme-green .footer,
+body.theme-green .btn {
+    background: var(--primary-green);
+}
+
+body.theme-green .section-title,
+body.theme-green .indicator-dot.active {
+    color: var(--primary-green);
+}
+
+body.theme-green .contact-form input[type="text"]:focus,
+body.theme-green .contact-form input[type="email"]:focus,
+body.theme-green .contact-form textarea:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 5px rgba(42, 157, 143, 0.3);
+}
+
+/* Ajustes para tema azul (padrão, NÃO ALTERAR) */
+body.theme-blue .header,
+body.theme-blue .footer,
+body.theme-blue .btn {
+    background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+}
+
+body.theme-blue .section-title,
+body.theme-blue .indicator-dot.active {
+    color: var(--primary-blue);
+}
+
+body.theme-blue .contact-form input[type="text"]:focus,
+body.theme-blue .contact-form input[type="email"]:focus,
+body.theme-blue .contact-form textarea:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 5px rgba(0, 119, 204, 0.3);
+}
+
