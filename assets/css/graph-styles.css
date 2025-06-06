@@ -1,0 +1,277 @@
+/* 
+   Estilos específicos para a página de gráficos - Problem Solving
+   Flood360 - Prevenção de Enchentes
+*/
+
+.graph-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.graph-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: var(--spacing-md);
+    flex: 1;
+    min-width: 300px;
+}
+
+.graph-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: var(--spacing-sm);
+    font-family: var(--font-heading);
+}
+
+.canvas-container {
+    height: 300px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.graph-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--spacing-sm);
+    font-size: 0.9rem;
+}
+
+.full-width {
+    flex-basis: 100%;
+    margin-top: var(--spacing-md);
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: var(--spacing-xs);
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--light-blue);
+    color: var(--dark-text);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.risk-indicators {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.risk-level {
+    margin-top: var(--spacing-sm);
+}
+
+.risk-bar {
+    height: 30px;
+    background: linear-gradient(90deg, 
+        #4caf50 0%, 
+        #4caf50 25%, 
+        #ffeb3b 25%, 
+        #ffeb3b 50%, 
+        #ff9800 50%, 
+        #ff9800 75%, 
+        #f44336 75%, 
+        #f44336 100%
+    );
+    border-radius: 15px;
+    position: relative;
+}
+
+.risk-bar::after {
+    content: '';
+    position: absolute;
+    height: 40px;
+    width: 4px;
+    background-color: var(--dark-text);
+    top: -5px;
+    left: calc(2.35 / 3 * 100%); /* Posição baseada no nível atual do rio */
+    transform: translateX(-50%);
+}
+
+.risk-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 0.8rem;
+}
+
+.risk-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--spacing-sm);
+}
+
+.stat-box {
+    background-color: var(--light-blue);
+    padding: var(--spacing-sm);
+    border-radius: 5px;
+    text-align: center;
+    flex: 1;
+    margin: 0 5px;
+}
+
+.stat-box h4 {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.stat-box p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin: 0;
+}
+
+.graph-explanation {
+    margin-top: var(--spacing-lg);
+}
+
+.equation {
+    background-color: var(--light-blue);
+    padding: var(--spacing-sm);
+    border-radius: 5px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 1.2rem;
+    margin: var(--spacing-sm) 0;
+}
+
+.alert-levels {
+    list-style: none;
+    margin-top: var(--spacing-sm);
+}
+
+.alert-levels li {
+    padding: 8px 15px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.alert-levels li.normal {
+    background-color: rgba(76, 175, 80, 0.2);
+    border-left: 5px solid #4caf50;
+}
+
+.alert-levels li.attention {
+    background-color: rgba(255, 235, 59, 0.2);
+    border-left: 5px solid #ffeb3b;
+}
+
+.alert-levels li.risk {
+    background-color: rgba(255, 152, 0, 0.2);
+    border-left: 5px solid #ff9800;
+}
+
+.alert-levels li.high-risk {
+    background-color: rgba(244, 67, 54, 0.2);
+    border-left: 5px solid #f44336;
+}
+
+.section-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+    .graph-container {
+        flex-direction: column;
+    }
+    
+    .risk-stats {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .stat-box {
+        margin: 0;
+    }
+}
+
+
+/* Ajustes para tema escuro */
+body.theme-dark .graph-card {
+    background-color: var(--dark-surface);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--dark-border);
+}
+
+body.theme-dark .graph-card h3 {
+    color: var(--dark-text-primary);
+}
+
+body.theme-dark th {
+    background-color: var(--dark-surface);
+    color: var(--dark-text-primary);
+    border-bottom: 1px solid var(--dark-border);
+}
+
+body.theme-dark td {
+    color: var(--dark-text-primary);
+    border-bottom: 1px solid var(--dark-border);
+}
+
+body.theme-dark tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
+body.theme-dark .risk-bar::after {
+    background-color: var(--dark-text-primary);
+}
+
+body.theme-dark .stat-box {
+    background-color: var(--dark-surface);
+    color: var(--dark-text-primary);
+    border: 1px solid var(--dark-border);
+}
+
+body.theme-dark .stat-box p {
+    color: var(--dark-primary-accent);
+}
+
+body.theme-dark .equation {
+    background-color: var(--dark-surface);
+    color: var(--dark-text-primary);
+    border: 1px solid var(--dark-border);
+}
+
+body.theme-dark .alert-levels li.normal {
+    background-color: rgba(76, 175, 80, 0.2);
+    border-left: 5px solid #4caf50;
+    color: var(--dark-text-primary);
+}
+
+body.theme-dark .alert-levels li.attention {
+    background-color: rgba(255, 235, 59, 0.2);
+    border-left: 5px solid #ffeb3b;
+    color: var(--dark-text-primary);
+}
+
+body.theme-dark .alert-levels li.risk {
+    background-color: rgba(255, 152, 0, 0.2);
+    border-left: 5px solid #ff9800;
+    color: var(--dark-text-primary);
+}
+
+body.theme-dark .alert-levels li.high-risk {
+    background-color: rgba(244, 67, 54, 0.2);
+    border-left: 5px solid #f44336;
+    color: var(--dark-text-primary);
+}
+
