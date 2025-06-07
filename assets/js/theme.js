@@ -27,10 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
             background: '#f8f9fa'
         },
         dark: {
-            primaryBlue: '#bb86fc',
-            primaryGreen: '#03dac6',
-            lightBlue: '#6200ee',
-            darkText: '#e0e0e0',
+            primaryBlue: '#07C1EFFF',
+            primaryGreen: '#08D8C7FF',
+            lightBlue: '#09E4D9FF',
+            darkText: '#0BCAE3FF',
             lightText: '#e0e0e0',
             background: '#121212'
         }
